@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division Calculator</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgray;
+}
+
+.calculator {
+    background-color: cyan;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 80%;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    width: 80%;
+    height: 40px;
+    background-color: lightgreen;border-radius: 10px;
+    color: 
+    brown;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0069d9;
+}
+
+#result {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Division Calculator</h2>
+        <input type="number" id="num1" placeholder="Number 1">
+        <input type="number" id="num2" placeholder="Number 2">
+        <button id="calculate">Calculate</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById('calculate').addEventListener('click', function() {
+    let num1 = parseFloat(document.getElementById('num1').value);
+    let num2 = parseFloat(document.getElementById('num2').value);
+    let result = document.getElementById('result');
+
+    if (isNaN(num1) || isNaN(num2)) {
+        result.textContent = 'Please enter valid numbers';
+    } else if (num2 === 0) {
+        result.textContent = 'Math Error';
+    } else {
+        let divisionResult = num1 / num2;
+        result.textContent = `Result: ${divisionResult}`;
+    }
+});
+    </script>
+
+
+</body>
+</html>
